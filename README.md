@@ -1,7 +1,7 @@
 # Excel stack
 Copy from input excel files and stack the sheets together.
 
-## Input files
+### Input files
 work book | work sheet
 --|--
 wb1 | 
@@ -11,7 +11,7 @@ wb2 |
 | | ws1
 | | ws2
 
-## Output  files
+### Output  files
 work book | work sheet
 --|--
 ws1 |
@@ -25,3 +25,6 @@ ws2 |
 * Copy worksheet between workbooks
 * Copy worksheet with format, cell merge
 * Compile to exe for windows with [gooey](https://github.com/chriskiehl/Gooey)
+
+## Attention
+* The script assumes that the input files have same format
