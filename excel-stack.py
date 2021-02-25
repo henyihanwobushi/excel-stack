@@ -16,10 +16,11 @@ from gooey import Gooey, GooeyParser
 )
 def main():
     parser = GooeyParser(description="Worksheet Stack")
-    parser.add_argument('input-filenames', nargs='+', widget='MultiFileChooser')
+    parser.add_argument('--input-filenames', nargs='+', widget='MultiFileChooser')
     parser.add_argument('--output-dir', widget='DirChooser')
     args = parser.parse_args()
-    stack(input_filenames=args.__dict__['input-filenames'], output_dir=args.output_dir)
+    print(args.__dict__)
+    stack(input_filenames=args.__dict__['input_filenames'], output_dir=args.output_dir)
 
 
 def stack(input_filenames=[], output_dir=""):
@@ -99,12 +100,8 @@ def copy_sheet(work_book1, sheet_name1, work_book2, sheet_name2):
 def copy_cells(worksheet_1, worksheet_2):
     for (row, col), source_cell  in worksheet_1._cells.items():
         target_cell = worksheet_2.cell(column=col, row=row)
-
         target_cell._value = source_cell._value
         target_cell.data_type = source_cell.data_type
-        # target_cell.fill = copy(source_cell.fill)
-        # target_cell.font = copy(source_cell.font)
-        # target_cell.border = copy(source_cell.border)
         target_cell._style = copy(source_cell._style)
         target_cell._hyperlink = copy(source_cell.hyperlink)
         target_cell.comment = copy(source_cell.comment)
