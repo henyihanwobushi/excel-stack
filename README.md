@@ -1,4 +1,4 @@
-# excel-stack
+# Excel stack
 Copy from input excel files and stack the sheets together.
 
 ## Input files
@@ -22,5 +22,6 @@ ws2 |
 | | wb2
 
 ## Features
-* copy worksheet between workbooks
-* copy worksheet with format, cell merge
+* Copy worksheet between workbooks
+* Copy worksheet with format, cell merge
+* Compile to exe for windows with [gooey](https://github.com/chriskiehl/Gooey)
