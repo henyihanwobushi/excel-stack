@@ -19,7 +19,6 @@ def main():
     parser.add_argument('--input-filenames', nargs='+', widget='MultiFileChooser')
     parser.add_argument('--output-dir', widget='DirChooser')
     args = parser.parse_args()
-    print(args.__dict__)
     stack(input_filenames=args.__dict__['input_filenames'], output_dir=args.output_dir)
 
 
